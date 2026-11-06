@@ -2,6 +2,7 @@
 
 # must run chmod +x comment_recreate.sh to use
 # also must have github CLI installed to use `gh`
+# note: posting recreate does not always invoke dbot, may need to investigate awaiting
 set -euo pipefail
 
 main() {
@@ -39,6 +40,10 @@ main() {
     gh pr comment "$pr" \
       --repo "$REPO" \
       --body "@dependabot recreate"
+      
+    # sleep may help, but it doesn't fix everything
+    # sleep 3
+    
   done <<< "$PR_NUMBERS"
 
   echo "Done."
