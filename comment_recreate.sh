@@ -43,8 +43,8 @@ main() {
       --repo "$REPO" \
       --body "@dependabot recreate"
       
-    # sleep may help, but it doesn't fix everything
-    # sleep 3
+    # note: if there is a merge conflict dbot usually won't respond to any mentions
+    # and thus you will need to take care of it manually
     
   done <<< "$PR_NUMBERS"
 
