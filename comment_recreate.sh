@@ -3,6 +3,8 @@
 # must run chmod +x comment_recreate.sh to use
 # also must have github CLI installed to use `gh`
 # note: posting recreate does not always invoke dbot, may need to investigate awaiting
+# However, running this is an excellent way to clear out your queue after an npck.
+# Expect a LOT of emails.
 set -euo pipefail
 
 main() {
